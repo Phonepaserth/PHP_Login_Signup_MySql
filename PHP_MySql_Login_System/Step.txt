@@ -1,0 +1,22 @@
+CREATE DATABASE db_exam;
+
+
+CREATE TABLE accounts (
+	id int(11) NOT NULL AUTO_INCREMENT,
+  	username varchar(100) NOT NULL,
+  	password varchar(255) NOT NULL,
+    photo varchar(100) DEFAULT ".\Photo\Profile1.png",
+  	status varchar(100) DEFAULT "User",
+	date_time date NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO accounts VALUES (1, 'Fiko1', '21232f297a57a5a743894a0e4a801fc3',DEFAULT,DEFAULT, now());
+
+INSERT INTO accounts(username, password, photo, status, date_time) VALUES ('Fiko1', '21232f297a57a5a743894a0e4a801fc3',DEFAULT,DEFAULT,now())
+
+SELECT accounts.id, accounts.username, accounts.password, role.role_name FROM `accounts` JOIN `role` on (role.id = accounts.status);
+
+SELECT accounts.id, accounts.username, accounts.password, role.role_name FROM `accounts` JOIN `role` on (role.id = accounts.status) WHERE accounts.username = 'root';
+
+select * from `accounts` JOIN `role` on (role.id = accounts.status) where accounts.id=17
